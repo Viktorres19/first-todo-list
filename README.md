@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### `this project can:`
+
+* add new tasks;
+* delete tasks;
+* edit tasks;
+* autorize client;
+* show counted tasks;
+* show completed tasks;
+* it uses react icons;
+* change background color randomly on add new task.
