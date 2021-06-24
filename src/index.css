@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500;600;700;800&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.containerMini{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stratch;
+}
+
+.todoForm{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.todoForm input{
+  flex-grow: 2;
+  font-size: 16px;
+  color: rgb(59,52,187);
+  border-color: rgb(59,52,187);
+  border-radius: 5px;
+  outline: none;
+}
+
+.todoForm input:focus{
+  color: yellow;
+  background-color: rgb(59,52,187);
+}
+
+.todoForm input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(59,52,187);
+  opacity: 1; /* Firefox */
+}
+
+.todoForm input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(59,52,187);
+}
+
+.todoForm input::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(59,52,187);
+}
+
+.todoForm button{
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  padding: 5px 5px 1px 5px;
+  font-weight: 700;
+  font-size: 25px;
+  color: white;
+  transition: all .3s ease;
+}
+
+.todoForm button:hover{
+  color: yellow;
+  opacity: .85;
+}
+
+.toDo{
+  width: 100%;
+}
+
+/*.todo__item{
+  display: flex;
+  justify-content: space-between;
+  color: yellow;
+  background: rgb(59,52,187);
+  background: linear-gradient(90deg, rgba(21,21,78,1) 0%, rgba(59,52,187,1) 100%);
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 3px;
+}*/
+
+.todo__item{
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+
+.todo__show{
+  display: flex;
+  justify-content: space-between;
+  color: yellow;
+  background: rgb(59,52,187);
+  background: linear-gradient(90deg, rgba(21,21,78,1) 0%, rgba(59,52,187,1) 100%);
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.todo__item div:first-child{
+  flex-grow: 2;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+.todo__item div:last-child{
+  cursor: pointer;
+}
+
+.todo__text.strike{
+  text-decoration: line-through;
+}
+
+.todo__item button{
+  background-color: yellow;
+  border: none;
+  border-radius: 3px;
+  color: rgb(59,52,187);
+  font-size: 25px;
+  margin-left: 5px;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.todo__item button svg{
+  display: block;
+}
+
+.todo__item .button--red{
+  color: white;
+  background-color: red;
+}
+
+.todo__item button:hover{
+  opacity: 95%;
+}
+
+.todo__hidden{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(59,52,187);
+  display: none;
+  z-index: 2;
+  padding: 3px 10px;
+}
+
+.todo__hidden.show{
+  display: block;
+}
+
+.todo__item .todo__hidden.show{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.todo__item .todo__hidden.show input{
+  flex-grow: 2;
+  font-size: 16px;
+  color: rgb(59,52,187);
+  border: none;
+  outline: none;
+  padding: 2px;
+  margin: 0;
+}
+
+.todo__item .todo__hidden.show input:focus{
+  color: yellow;
+  background-color: rgb(59,52,187);
+}
+
+.todo__item .todo__hidden.show input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(59,52,187);
+  opacity: 1; /* Firefox */
+}
+
+.todo__item .todo__hidden.show input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: rgb(59,52,187);
+}
+
+.todo__item .todo__hidden.show input::-ms-input-placeholder { /* Microsoft Edge */
+  color: rgb(59,52,187);
+}
+
+.todo__item .todo__hidden.show button{
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.todo__item .todo__hidden.show button svg{
+  display: block;
+}
