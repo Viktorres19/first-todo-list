@@ -1,0 +1,42 @@
+.container {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.containerMini {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.table {
+	width: 100%;
+	border-top: 1px solid #282c34;
+	margin-top: 20px;
+	border-spacing: 0;
+}
+
+.table td, .table th {
+	width: 50%;
+	box-sizing: border-box;
+	border-color: #282c34;
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-style: solid;
+	padding: 3px;
+}
+
+.table td:first-child, .table th:first-child {
+	border-right-width: 0px;
+}
+
+.table th {
+	background: #ccc;
+}
+

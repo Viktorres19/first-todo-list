@@ -3,6 +3,7 @@ import {useStores} from "../../hooks/use-stores";
 import React, {useState, useEffect} from "react";
 import Todo from "./../Todo/Todo";
 import { HiPlus } from "react-icons/hi";
+import AltText from "./AltText/AltText";
 
 const Form = () => {
 	const {todoStore} = useStores();
@@ -50,11 +51,15 @@ const Form = () => {
 						/>
 						<button type="button" onClick={handleSubmit}><HiPlus /></button>
 					</div>
-					<div className="toDo">
-						{todoStore.todos.map(todo => {
-							return <Todo item={todo} key={todo.id}/>
-						})}
-					</div>
+					{todoStore.todos.length ?
+						<div className="toDo">
+							{todoStore.todos.map(todo => {
+								return <Todo item={todo} key={todo.id}/>
+							})}
+						</div>
+						:
+						<AltText />
+					}
 				</div>
 			</div>
 		</div>

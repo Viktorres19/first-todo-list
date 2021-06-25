@@ -1,12 +1,18 @@
 import {observer} from 'mobx-react';
+import { Link, useHistory } from 'react-router-dom';
 import classes from './Header.module.css';
 import React from "react";
 import {useStores} from "../../hooks/use-stores";
 import { GiExitDoor } from "react-icons/gi";
 import { FcApproval } from "react-icons/fc";
+import { BsFillPersonLinesFill } from "react-icons/bs";
+import { FiChevronsLeft } from "react-icons/fi";
+import Headercounter from "./Headercounter/Headercounter";
 
 const Header = () => {
-	const {authStore, todoStore} = useStores();
+	let history = useHistory();
+	const {authStore} = useStores();
+	const {todoStore} = useStores();
 
 	const logOut = () => {
 		authStore.logOut();
@@ -16,10 +22,14 @@ const Header = () => {
 		<div className={classes.header}>
 			<div className={classes.container}>
 				<h1 className={classes.h1}><FcApproval />Universal checklist</h1>
-				<div className={classes.counter}>
-					<div className={classes.infoRow}><div className={classes.infoName}>Tasks totally:</div> <div>{todoStore.total}</div></div>
-					<div className={classes.infoRow}><div className={classes.infoName}>Tasks completed:</div> <div>{todoStore.completedTasks}</div></div>
-				</div>
+				{ (window.location.href.indexOf("profile") > -1) ?
+						<button className={classes.navButton} onClick={() => history.goBack()}><FiChevronsLeft /></button>
+					:
+					<Link to="/profile">
+						<button className={classes.navButton}><BsFillPersonLinesFill /></button>
+					</Link>
+				}
+				{todoStore.todos.length ? <Headercounter /> : <p> </p> }
 				<button onClick={ () => logOut() } className={classes.button}><GiExitDoor /></button>
 			</div>
 		</div>

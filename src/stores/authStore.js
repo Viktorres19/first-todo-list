@@ -11,7 +11,7 @@ class AuthStore {
 	}
 
 	users = [
-		{login: 'Vasya', password: '123'}
+		{ login: 'Vasya', password: '123', name: 'Vasya', surname: 'Vasiliev', age: '18' }
 	]
 	@action login = (values) => {
 
